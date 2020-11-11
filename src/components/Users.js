@@ -5,6 +5,20 @@ class Users extends Component {
     sorArr = (user) => {
 console.log(arr.reverse());
     };
+
+     shuffleArray() {
+         const array  = arr;
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        console.log(array)
+    }
+
+
     render() {
         let className='target'
         return (
@@ -14,7 +28,7 @@ console.log(arr.reverse());
                         return (<User user={item} key={index}/>)
                     })
                 }
-                <button onClick={this.sorArr}>sort</button>
+                <button onClick={this.shuffleArray}>sort</button>
 
             </div>
         );
